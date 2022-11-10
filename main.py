@@ -12,14 +12,18 @@ while isRunning:
   print("Deze vliegtuigen wachten om geparkeerd te worden:")
 
   #!! Loop over planesLanded, print alleen wanneer de hangar 0 is (dat betekent dat het vliegtuig nog _niet_ in een hangar staat).
-  
-
+  for plane in planeLandedList:
+      if (plane ["hangar"] == 0):
+          print (plane["type"])
 
   #Vraag de gebruiker om een vliegtuigcode in te voeren.
   inputCode = input("\nVoer code in: ")
 
   #!! Onder deze print: loop over hangars, print alleen wanneer 'occupied' False is.
   print("\nDeze hangars zijn nog vrij:")
+  for hangar in hangarList:
+      if (hangar ["occupied"] == False ):
+          print (hangar["num"])
 
 
 
