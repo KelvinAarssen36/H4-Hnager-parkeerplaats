@@ -14,7 +14,7 @@ while isRunning:
   #!! Loop over planesLanded, print alleen wanneer de hangar 0 is (dat betekent dat het vliegtuig nog _niet_ in een hangar staat).
   for plane in planeLandedList:
       if (plane ["hangar"] == 0):
-          print (plane["type"])
+          print (plane["code"],"(",plane["type"],")")
 
   #Vraag de gebruiker om een vliegtuigcode in te voeren.
   inputCode = input("\nVoer code in: ")
@@ -47,11 +47,15 @@ while isRunning:
       plane['hangar'] = inputHangar
   
   #!! Maak hetzelfde als de for-loop hierboven, maar dan: zoek de gekozen hangar en stel 'occupied' in op True
-  
+  for hangar in hangarList:
+      if hangar['num'] == inputHangar: 
+        hangar['occupied'] = True
 
 
   #!! Zorg dat het programma stopt als de gebruik een 'X' heeft ingevoerd
   result = input("Druk op enter om door te gaan of typ 'X' om te stoppen...\n")
+  if (result == "X"):
+      isRunning = False 
   
 
 
